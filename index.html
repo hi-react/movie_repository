@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css 파일 분리해서 참조하도록 -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- js 파일 분리해서 참조하도록 -->
+    <!-- js를 head 쪽에 위치시키면, js를 먼저 읽고 실행한 뒤, html을 파싱하게 된다. 
+      그러면 html의 class명을 받아 js에서 적용한 getElementsByClassName같은 것들이 실행되지 않을 수 있기 때문에
+    defer(지연) 옵션을 걸어주면, script를 일단 읽기만 하고 -> html 파싱을 마친 뒤 -> script를 실행 ! -->
+    <script src="script.js" defer></script>
+    <!-- 웹 페이지 이름 -->
+    <title>내배캠 최고 평점 영화</title>
+  </head>
+
+  <body>
+    <!-- 한 덩이 -->
+    <div class="title">
+      <h1>내배캠 최고 평점 영화 콜렉션</h1>
+    </div>
+    <!-- 두 덩이 -->
+    <!-- 이거 div로 검색 부분 묶어서 onsubmit(event)실행할때는 안되더니, form으로 바꾸니까 됨! -->
+    <!-- <form> 태그가 사용자로부터 입력받은 데이터를 서버로 제출(submit)하는 역할한대 (회원가입, 로그인, 검색 등) -->
+    <!-- <form> 태그에 onsubmit 걸어서 filter(검색) 기능 넣어주면 enter 키만 쳐도 검색됨! -->
+    <form class="search" onsubmit="filter(event)">
+      <label>영화 검색: </label>
+      <input
+        type="text"
+        class="search-box"
+        placeholder="영화 제목을 입력해 보세요"
+        value=""
+        autofocus
+      />
+      <button id="search-btn">검색</button>
+      <!-- button의 디폴트 : submit일걸 아마.. form의 onsubmit 기능 그대로 받아와 // type="button" 으로 지정하면 검색 버튼 클릭해서 눌렀을 때 작동하지 않음. -->
+    </form>
+    <!-- 세 덩이 : 카드와 영화 정보를 받아 줄 부분 -->
+    <main>
+      <ul class="movie-list"></ul>
+    </main>
+  </body>
+</html>
+
+<!-- value="" 이거 input 요소의 초기값을 설정하는 속성이래. 페이지 로드 될 때 입력 필드 empty-->
+<!-- autofocus 이건 사이트 키자마자 자동 커서 갖다 대기 -->
