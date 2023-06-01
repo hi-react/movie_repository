@@ -1,0 +1,110 @@
+/* 구글 폰트 적용 */
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+* {
+  font-family: "Gowun Dodum", sans-serif;
+}
+
+/* header 부분 box 가득 차게 */
+* {
+  margin: 0;
+}
+
+/* 1. 제목부: 내배캠 최고 평점 영화 컬렉션 -> 글자 크기 및 색상, 높이, 정렬, 배경 이미지*/
+.title {
+  font-size: 25px;
+  color: white;
+
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* 정렬하기 세트 (4개) */
+
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    /* 이건 이미지를 어둡게 하는 함수 */
+      url("https://cdn.huffingtonpost.kr/news/photo/201509/12146_22600.jpeg");
+  background-position: center;
+  background-size: cover;
+  /* 배경 이미지 세트 (3개) */
+}
+
+/* 2. 영화 검색하는 부분: search와 search 안의 하위 항목들 */
+.search {
+  padding: 30px 0;
+  /* 안쪽 여백 위 아래로 20px씩 주기 */
+  border-bottom: 1px solid black;
+  /* 아래쪽 경계선 1px 실선으로 black */
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* 정렬하기 세트 (4개) -> 가로(row)로 정렬 */
+}
+
+/* 영화 검색 폰트 사이즈 */
+.search label {
+  font-size: 2rem;
+}
+
+/* 영화 검색 입력하는 부분: 왼쪽 바깥 여백, 폭, 안쪽 여백*/
+.search input {
+  margin-left: 4rem;
+  width: 600px;
+  padding: 10px 10px;
+  font-size: 1.5rem;
+}
+
+/* 영화 검색 버튼 */
+.search button {
+  margin-left: 20px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+}
+
+/* 3. 해강님꺼 붙인거 -> 무비 카드 부분 */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    1fr
+  ); /* 5개의 동일한 크기의 열 생성, 공간 분할 배분 */
+  gap: 2rem; /* 그리드 항목 사이의 간격 설정 */
+  padding: 3rem; /* 그리드 컨테이너 내부 여백 설정 */
+}
+
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* 항목 사이의 간격 설정 */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; /* 그림자 효과 */
+  padding: 1rem; /* 항목 내부 여백 설정 */
+  border: 1px solid #dddddd; /* 테두리 설정 */
+  border-radius: 1rem; /* 테두리 둥글게 설정 */
+}
+
+.movie-poster {
+  width: 100%; /* 이미지 너비 설정 */
+  object-fit: cover; /* 이미지가 부모 요소를 꽉 채우도록 조정 */
+  border-radius: 0.5rem; /* 이미지 테두리 둥글게 설정 */
+}
+
+.movie-title {
+  font-size: 2rem;
+}
+
+.movie-desc {
+  line-height: 1.3rem;
+}
+
+.movie-rating {
+  margin-top: auto;
+  font-size: 1.5rem;
+  text-align: right;
+}
